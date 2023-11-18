@@ -1,0 +1,642 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 1.3. Font class declaration
+   ========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* common styling starts here */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  width: 26%;
+  max-width: 630px;
+  margin: 0px auto;
+}
+
+/* common styling ends here */
+
+
+/*=================================
+  main styling starts here
+=================================*/
+/*=================================
+  animation section starts here
+=================================*/
+
+.animation-section {
+  margin: 30px 0;
+}
+
+.animation-section .wrapper {
+  max-height: 600px;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-image,
+.bg-image img,
+.table img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.table,
+.plate {
+  position: absolute;
+  bottom: 0;
+}
+
+.table {
+  width: 100%;
+  opacity: 0;
+  animation: active-table .8s linear .3s forwards;
+}
+
+.plate {
+  transform: translateX(-100%);
+  animation: active-plate 10s cubic-bezier(0.22, 1, 0, 1) 1.5s 1;
+}
+
+.info {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  color: #c2314a;
+  font-size: 30px;
+  text-align: center;
+  transform: translateX(-300%);
+}
+
+.person-img {
+  position: absolute;
+  right: 0;
+  bottom: 85px;
+  transform: translateX(100%);
+}
+
+.boring-info {
+  animation: boring-info 5s cubic-bezier(0, 1.17, 1, 1) 4s 1 alternate;
+}
+
+.sad-sonali {
+  bottom: 90px;
+  animation: sad-sonali 5s cubic-bezier(0, 1.17, 1, 1) 4s 1 alternate;
+}
+
+.bread-plate,
+.veggies,
+.bread {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-180%);
+}
+
+.veggies {
+  bottom: 20px;
+  left: 12%;
+}
+
+.bread-plate,
+.veggies {
+  animation: sandwich 25s cubic-bezier(0.1, 1, 0, 1) 8s 1 alternate;
+}
+
+.bread {
+  z-index: 2;
+  bottom: 35px;
+  left: 12%;
+  animation: breadUp 25s cubic-bezier(0.1, .6, 0, 1) 8s 1 alternate;
+}
+
+.knife {
+  position: absolute;
+  z-index: 1;
+  bottom: 50px;
+  left: 15%;
+  opacity: 0;
+  transform: translateX(0) rotate(300deg);
+  transition: transform 0.4s ease-out;
+  animation: moveKnife 8s cubic-bezier(0, 0, 0, 1) 15s 1 forwards;
+}
+
+.mayo {
+  position: absolute;
+  bottom: 30px;
+  left: 15%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: showMayo 15s cubic-bezier(0.22, 0.68, 0, 1) 15s 1 alternate;
+}
+
+.sandwich-info {
+  animation: boring-info 5s cubic-bezier(0, 1.17, 1, 1) 21s 1 alternate;
+}
+
+.happy-sonali {
+  animation: sad-sonali 5s cubic-bezier(0, 1.17, 1, 1) 21s 1 alternate;
+}
+.chef {
+  bottom: 103px;
+}
+.product-info {
+  animation: boring-info 5s cubic-bezier(0, 1.17, 1, 1) 24s 1 alternate;
+}
+.chef {
+  animation: sad-sonali 5s cubic-bezier(0, 1.17, 1, 1) 24s 1 alternate;
+}
+
+.veg-mayo {
+  position: absolute;
+  bottom: 0;
+  /* right: 8px; */
+  transform: translateX(250%);
+  animation: showVegMayo 5s cubic-bezier(0, 1.17, 1, 1) 27s 1 forwards;
+}
+
+.hat {
+  position: absolute;
+  top: 45%;
+  left: 53%;
+  transform: translate(-350%, 0);
+  animation: showHat 12s cubic-bezier(0, 1.17, 1, 1) 29s 1 forwards;
+}
+
+.food-info {
+  animation: food-info 15s cubic-bezier(0, 1.17, 0, 1) 27s 1 forwards;
+}
+
+.recipe-btn {
+  padding: 10px 6%;
+  border-radius: 6px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background-color: #3f318b;
+  color: #fff;
+  text-transform: capitalize;
+  transform: translateX(-100%);
+  white-space: nowrap;
+  animation: showBtn 5s cubic-bezier(0, 1.17, 1, 1) 35s 1 forwards;
+}
+
+
+/* animation starts here */
+
+@keyframes active-table {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes active-plate {
+  0% {
+    transform: translateX(-150%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+
+@keyframes sad-sonali {
+  0% {
+    transform: translate(100%, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes boring-info {
+  0% {
+    transform: translateX(-300%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes sandwich {
+  0% {
+    transform: translateX(-260%);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-290%);
+  }
+}
+
+@keyframes breadUp {
+  0% {
+    bottom: 35px;
+    transform: translateX(-280%);
+  }
+  15% {
+    bottom: 35px;
+    transform: translateX(0);
+  }
+  45% {
+    bottom: 80px;
+    transform: translateX(0);
+  }
+  75% {
+    bottom: 35px;
+    transform: translateX(0);
+  }
+  100% {
+    bottom: 35px;
+    transform: translateX(-290%);
+  }
+}
+
+@keyframes moveKnife {
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(300deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(160%) rotate(300deg);
+  }
+}
+
+@keyframes showMayo { 
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes food-info {
+  0% {
+    transform: translateX(-280%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes showVegMayo {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    /* left: 65%; */
+    transform: translateX(-100%);
+  }
+  100% {
+    left: 67%;
+    transform: translate(-100%);
+  }
+}
+
+@keyframes showHat {
+  0% {
+    transform: translate(-270%, 0);
+  }
+  50% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, 50%);
+  }
+}
+
+@keyframes showBtn {
+  0% {
+    top: 0;
+    left: 0;
+    transform: translateX(-200%);
+  }
+  50% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* animation ends here */
+
+/*=================================
+  animation section ends here
+=================================*/
+/*=================================
+  main styling ends here
+=================================*/
